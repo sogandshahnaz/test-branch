@@ -9,3 +9,8 @@ body{
     height: 100vh;
     background-color: lightblue;
 }
+
+h1{
+    font-size: 45px;
+    color: pink;
+}
