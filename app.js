@@ -98,3 +98,29 @@ const proxy = new Proxy(userIdentity, {
 
 delete proxy.age;
 delete proxy.name;
+
+const sym1 = Symbol.for('id');
+
+const names = {
+    name: 'celine',
+    age: 19,
+    ['id']: 123
+};
+
+console.log(names.id)
+
+console.log(Object.keys(names));
+
+console.log(Symbol.keyFor(sym1));
+
+const userName = 'celine';
+const age = 19;
+const country = 'USA';
+
+const userObj = {
+    userName,
+    age,
+    country
+};
+
+console.log(userObj);
