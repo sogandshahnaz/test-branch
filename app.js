@@ -124,3 +124,51 @@ const userObj = {
 };
 
 console.log(userObj);
+
+let arr = [1,2,3];
+arr.push(4);
+console.log(arr);
+
+const car = {
+    name: 'mercedes benz G class',
+    brand: 'benz'
+}
+
+console.log(car);
+
+car.price = 30000000;
+
+console.log(car);
+
+let str = 'hello';
+console.log(str);
+str[0] = 'H';
+
+console.log(str);
+
+str = 'Hello';
+
+console.log(str);
+
+
+function makeCoffee(){
+    return new Promise((resolve, reject) => {
+        console.log('coffee is being prepared');
+        setTimeout(() => {
+            let waterIsBoiled = true;
+            if(waterIsBoiled){
+                resolve('the coffee is ready');
+            } else{
+                reject('the coffee was not ready!');
+            };
+        }, 3000);
+    })
+};
+
+makeCoffee()
+.then(message => {
+    console.log(message);
+})
+.catch(error => {
+    console.log(error);
+})
