@@ -171,4 +171,80 @@ makeCoffee()
 })
 .catch(error => {
     console.log(error);
+});
+
+
+// function orderingFood(){
+//     return new Promise((resolve, reject) =>{
+//         console.log('the food is orderd');
+//         setTimeout(() => {
+//             let isOrdering = false;
+
+//             if(isOrdering){
+//                 resolve('the food is served');
+//             } else{
+//                 reject('the food is not served');
+//             }
+//         }, 3000);
+//     })
+// };
+
+// orderingFood()
+// .then(message => {
+//     console.log(message);
+// })
+// .catch(error => {
+//     console.log(error);
+// });
+
+function checkPassword(inputPassword){
+    return new Promise((resolve, reject) => {
+        const correctPassword = 182060;
+
+        setTimeout(() => {
+            if(correctPassword === inputPassword){
+                resolve('you logged in');
+            } else{
+                reject('the password is not correcr');
+            };
+        },3000);
+    })
+};
+
+checkPassword(182060)
+.then(succses => {
+    console.log(succses);
+})
+.catch(err => {
+    console.log(err);
+});
+
+
+new Promise((resolve, reject) => {
+    resolve(2);
+    reject('not a number');
+})
+.then(result => {
+    console.log(result);
+    return result * 2;
+})
+.then(result => {
+    console.log(result);
+    return result + 1
+})
+.then(result => {
+    console.log(result);
+})
+.catch(err => {
+    console.log(err);
+})
+
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(response => response.json())
+.then(data => {
+    console.log(data.title);
+})
+.catch(err => {
+    console.log(err);
 })
